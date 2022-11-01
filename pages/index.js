@@ -14,7 +14,7 @@ export default function Home() {
       if(auth.currentUser) {
         const dateRef = ref(db, 'users/' + auth.currentUser.uid)
         onValue(dateRef, (snapshot) => {
-          if(!snapshot.exists() || Date.now() - snapshot.val().time > 8640) {
+          if(!snapshot.exists() || Date.now() - snapshot.val().time > 86400000) {
             setDrawing(true)
           }
         })
