@@ -3,7 +3,7 @@ import Image from "next/image"
 export default function Drawing({ title, image, date, artist, isown }) {
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex justify-center items-center shadow-lg shadow-gray-500 hover:shadow-md ease-in-out transition duration-300 bg-cover aspect-square bg-[url('../public/painting.png')]">
+      <div className="flex justify-center items-center shadow-lg shadow-gray-500 hover:shadow-md ease-in-out transition duration-300 bg-cover aspect-square bg-[url('/painting.png')]">
         <div className="w-[81.5%] aspect-square rounded-lg">
           <Image
             src={image}
