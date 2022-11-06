@@ -53,33 +53,33 @@ export default function Canvas({ setDrawing }) {
   }, [])
 
   const submit = async () => {
-    // if (!title) {
-    //   return
-    // }
-    // reference.current.exportImage("png")
-    //   .then(data => {
+    if (!title) {
+      return
+    }
+    reference.current.exportImage("png")
+      .then(data => {
 
-    //     const userRef = ref(db, 'users/' + auth.currentUser.uid)
-    //     const date = new Date();
-    //     const datestring = ((date.getMonth() + 1).toString()).substring(-2) + "/" + (date.getDate().toString()).substring(-2) + "/" + (date.getFullYear().toString()).substring(2);
+        const userRef = ref(db, 'users/' + auth.currentUser.uid)
+        const date = new Date();
+        const datestring = ((date.getMonth() + 1).toString()).substring(-2) + "/" + (date.getDate().toString()).substring(-2) + "/" + (date.getFullYear().toString()).substring(2);
 
-    //     set(userRef, {
-    //       time: Date.now()
-    //     })
+        set(userRef, {
+          time: Date.now()
+        })
 
-    //     setDoc(doc(firestore, "images", auth.currentUser.uid), {
-    //       timestamp: Date.now(),
-    //       title: title,
-    //       image: data,
-    //       artist: auth.currentUser.displayName,
-    //       date: datestring
-    //     })
+        setDoc(doc(firestore, "images", auth.currentUser.uid), {
+          timestamp: Date.now(),
+          title: title,
+          image: data,
+          artist: auth.currentUser.displayName,
+          date: datestring
+        })
 
-    //     setDrawing(false)
-    //   })
-    //   .catch(e => {
-    //     console.log(e)
-    //   })
+        setDrawing(false)
+      })
+      .catch(e => {
+        console.log(e)
+      })
   }
 
   return (
