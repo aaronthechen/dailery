@@ -87,7 +87,7 @@ export default function Canvas({ setDrawing }) {
       <p className="-my-2">Make your daily painting!</p>
       <div className='flex flex-col gap-2 w-full items-start'>
         <p>TITLE</p>
-        <input type="text" maxLength={30} className='border border-black p-2 outline-none w-full' onChange={(event) => { setTitle(event.target.value) }} />
+        <input type="text" maxLength={30} className='border border-black p-2 rounded-none outline-none w-full' onChange={(event) => { setTitle(event.target.value) }} />
       </div>
 
 
@@ -102,14 +102,14 @@ export default function Canvas({ setDrawing }) {
           ref={reference}
         />
         <div className="flex md:flex-col flex-row gap-4 md:w-8 md:-mr-[20%] justify-between">
-          <div className="flex gap-4 md:flex-col flex-row">
+          <div className="flex xs:gap-4 gap-2 md:flex-col flex-row">
             {
               colors.map(color => (
                 <button key={color} onClick={() => { setCurrentColor(color) }} className={"aspect-square md:grow-0 w-8 rounded-full hover:scale-125 transition duration-300 ring-offset-4 ring-black " + ((currentColor === color ? "ring-1" : "ring-none"))} style={{ 'backgroundColor': `${color}` }}></button>
               ))
             }
           </div>
-          <div className="flex gap-4 md:flex-col flex-row items-center">
+          <div className="flex xs:gap-4 gap-2 md:flex-col flex-row items-center">
             <button onClick={() => { setStrokeWidth(5) }} className={"aspect-square w-2 rounded-full hover:scale-125 transition duration-300 ring-offset-4 ring-black " + (strokeWidth === 5 ? "ring-1" : "ring-none")} style={{ 'backgroundColor': `${currentColor}` }}></button>
             <button onClick={() => { setStrokeWidth(10) }} className={"aspect-square w-4 rounded-full hover:scale-125 transition duration-300 ring-offset-4 ring-black " + (strokeWidth === 10 ? "ring-1" : "ring-none")} style={{ 'backgroundColor': `${currentColor}` }}></button>
             <button onClick={() => { setStrokeWidth(20) }} className={"aspect-square w-6 rounded-full hover:scale-125 transition duration-300 ring-offset-4 ring-black " + (strokeWidth === 20 ? "ring-1" : "ring-none")} style={{ 'backgroundColor': `${currentColor}` }}></button>
