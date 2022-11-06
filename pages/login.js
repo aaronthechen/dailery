@@ -19,7 +19,6 @@ export default function Login() {
   const router = useRouter()
 
   useEffect(() => {
-
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       console.log(currentUser)
       if (currentUser) {
@@ -89,29 +88,28 @@ export default function Login() {
 
   return (
     <div className="flex w-full h-screen absolute -z-10 left-0 top-0 px-4 justify-center items-center">
-      <div className='w-[32rem] border border-black py-6 px-4 flex flex-col gap-6 items-center'>
+      <div className='w-[32rem] border border-black p-4 flex flex-col gap-2 items-center'>
         <p className='font-bold text-lg'>{onLogin ? "LOGIN" : "REGISTER"}</p>
-
         <div className='flex flex-col gap-2 w-full items-start'>
           <p className='text-sm text-red-600'>{error}</p>
           {!onLogin &&
             <>
               <p>USERNAME</p>
-              <input type="text" maxLength={20} className='border border-black p-2 outline-none w-full' onChange={(event) => { setName(event.target.value)}} />
+              <input type="text" maxLength={20} className='border border-black p-2 rounded-none outline-none w-full' onChange={(event) => { setName(event.target.value)}} />
             </>
           }
           <p>EMAIL</p>
-          <input type="email" className='border border-black p-2 outline-none w-full' onChange={(event) => { setEmail(event.target.value)}} />
+          <input type="email" className='border border-black p-2 rounded-none outline-none w-full' onChange={(event) => { setEmail(event.target.value)}} />
           <p>PASSWORD</p>
-          <input type="password" maxLength={20} className='border border-black p-2 outline-none w-full' onChange={(event) => { setPassword(event.target.value) }} />
+          <input type="password" maxLength={20} className='border border-black p-2 rounded-none outline-none w-full' onChange={(event) => { setPassword(event.target.value) }} />
           {onLogin ?
-            <div className='grid grid-cols-2 gap-4 w-full'>
-              <button className='bg-black text-white grow py-4 mt-4' onClick={login}>LOGIN</button>
-              <button className='bg-black text-white grow py-4 mt-4' onClick={switchForm}>REGISTER INSTEAD</button>
+            <div className='grid md:grid-cols-2 md:gap-4 gap-2 mt-6 w-full'>
+              <button className='bg-black text-white grow py-4' onClick={login}>LOGIN</button>
+              <button className='bg-black text-white grow py-4' onClick={switchForm}>REGISTER INSTEAD</button>
             </div> :
-            <div className='grid grid-cols-2 gap-4 w-full'>
-            <button className='bg-black text-white grow py-4 mt-4' onClick={switchForm}>LOGIN INSTEAD</button>
-            <button className='bg-black text-white grow py-4 mt-4' onClick={register}>REGISTER</button>
+            <div className='grid md:grid-cols-2 md:gap-4 gap-2 mt-6 w-full'>
+            <button className='bg-black text-white grow py-4' onClick={switchForm}>LOGIN INSTEAD</button>
+            <button className='bg-black text-white grow py-4' onClick={register}>REGISTER</button>
           </div>
           }
 
