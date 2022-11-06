@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <nav className="p-4 w-full border-b border-black z-40 flex justify-center">
       <div className="flex justify-between items-center max-w-screen-2xl grow">
-        <Link href="/" className="flex w-20 hover:font-bold">
+        <Link href="https://github.com/aaronthechen/dailery/" className="flex w-20 hover:font-bold">
           ABOUT
         </Link>
         <Link href="/" className="font-bold font-['Playfair_Display'] text-4xl">
