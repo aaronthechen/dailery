@@ -102,19 +102,19 @@ export default function Canvas({ setDrawing }) {
           ref={reference}
         />
         <div className="flex md:flex-col flex-row gap-4 md:w-8 md:-mr-[20%] justify-between">
-          <div className="flex xs:gap-4 gap-2 md:flex-col flex-row">
+          <div className="flex sm:gap-4 gap-2 md:flex-col flex-row">
             {
               colors.map(color => (
-                <button key={color} onClick={() => { setCurrentColor(color) }} className={"aspect-square md:grow-0 w-8 rounded-full hover:scale-125 transition duration-300 ring-offset-4 ring-black " + ((currentColor === color ? "ring-1" : "ring-none"))} style={{ 'backgroundColor': `${color}` }}></button>
+                <button key={color} onClick={() => { setCurrentColor(color) }} className={"aspect-square md:grow-0 sm:w-8 w-6 rounded-full transition duration-300 ring-offset-4 ring-black " + ((currentColor === color ? "ring-1" : "ring-none"))} style={{ 'backgroundColor': `${color}` }}></button>
               ))
             }
           </div>
-          <div className="flex xs:gap-4 gap-2 md:flex-col flex-row items-center">
-            <button onClick={() => { setStrokeWidth(5) }} className={"aspect-square w-2 rounded-full hover:scale-125 transition duration-300 ring-offset-4 ring-black " + (strokeWidth === 5 ? "ring-1" : "ring-none")} style={{ 'backgroundColor': `${currentColor}` }}></button>
-            <button onClick={() => { setStrokeWidth(10) }} className={"aspect-square w-4 rounded-full hover:scale-125 transition duration-300 ring-offset-4 ring-black " + (strokeWidth === 10 ? "ring-1" : "ring-none")} style={{ 'backgroundColor': `${currentColor}` }}></button>
-            <button onClick={() => { setStrokeWidth(20) }} className={"aspect-square w-6 rounded-full hover:scale-125 transition duration-300 ring-offset-4 ring-black " + (strokeWidth === 20 ? "ring-1" : "ring-none")} style={{ 'backgroundColor': `${currentColor}` }}></button>
-            <button onClick={() => { setStrokeWidth(40) }} className={"aspect-square w-8 rounded-full hover:scale-125 transition duration-300 ring-offset-4 ring-black " + (strokeWidth === 40 ? "ring-1" : "ring-none")} style={{ 'backgroundColor': `${currentColor}` }}></button>
-            <button onClick={() => { setStrokeWidth(100) }} className={"md:h-16 h-8 md:w-8 w-16 rounded-xl hover:scale-125 transition duration-300 ring-offset-4 ring-black " + (strokeWidth === 100 ? "ring-1" : "ring-none")} style={{ 'backgroundColor': `${currentColor}` }}></button>
+          <div className="flex sm:gap-4 gap-2 md:flex-col flex-row items-center">
+            <button onClick={() => { setStrokeWidth(5) }} className={"aspect-square sm:w-2 w-2 rounded-full transition duration-300 ring-offset-4 ring-black " + (strokeWidth === 5 ? "ring-1" : "ring-none")} style={{ 'backgroundColor': `${currentColor}` }}></button>
+            <button onClick={() => { setStrokeWidth(10) }} className={"aspect-square sm:w-4 w-4 rounded-full transition duration-300 ring-offset-4 ring-black " + (strokeWidth === 10 ? "ring-1" : "ring-none")} style={{ 'backgroundColor': `${currentColor}` }}></button>
+            <button onClick={() => { setStrokeWidth(20) }} className={"aspect-square sm:w-6 w-5 rounded-full transition duration-300 ring-offset-4 ring-black " + (strokeWidth === 20 ? "ring-1" : "ring-none")} style={{ 'backgroundColor': `${currentColor}` }}></button>
+            <button onClick={() => { setStrokeWidth(40) }} className={"aspect-square sm:w-8 w-6 rounded-full transition duration-300 ring-offset-4 ring-black " + (strokeWidth === 40 ? "ring-1" : "ring-none")} style={{ 'backgroundColor': `${currentColor}` }}></button>
+            <button onClick={() => { setStrokeWidth(100) }} className={"md:h-16 sm:h-8 h-6 md:w-8 w-16 rounded-xl transition duration-300 ring-offset-4 ring-black " + (strokeWidth === 100 ? "ring-1" : "ring-none")} style={{ 'backgroundColor': `${currentColor}` }}></button>
           </div>
         </div>
       </div>
